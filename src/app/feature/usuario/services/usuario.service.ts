@@ -9,7 +9,7 @@ import { environment } from '../../../../environments/environment';
 export class UsuarioService {
   constructor(private http: HttpClient) {}
 
-  private readonly url = `${environment.apiBaseUrl}/usuario`;;
+  private readonly url = `${environment.apiBaseUrl}/usuario`;
   
 
   consultar(): Observable<any> {
