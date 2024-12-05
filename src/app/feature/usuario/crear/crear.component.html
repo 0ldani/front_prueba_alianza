@@ -1,0 +1,47 @@
+<form (ngSubmit)="onSubmit()" #usuarioForm="ngForm" class="p-fluid">
+
+    <div class="p-field">
+      <label for="nombre" class="p-label">Nombre</label>
+      <input 
+        id="nombre" 
+        type="text" 
+        pInputText 
+        [(ngModel)]="usuario.nombre" 
+        name="nombre" 
+        required 
+        #nombre="ngModel" 
+        class="p-inputtext" 
+      />
+      <div *ngIf="nombre.invalid && nombre.touched" class="p-error">
+        El nombre es requerido.
+      </div>
+    </div>
+  
+    <div class="p-field">
+      <label for="password" class="p-label">Contraseña</label>
+      <input 
+        id="password" 
+        type="password" 
+        pInputText 
+        [(ngModel)]="usuario.password" 
+        name="password" 
+        required 
+        #password="ngModel" 
+        class="p-inputtext" 
+      />
+      <div *ngIf="password.invalid && password.touched" class="p-error">
+        La contraseña es requerida.
+      </div>
+    </div>
+  
+    <div class="p-field">
+      <button 
+        pButton 
+        label="Crear Usuario" 
+        type="submit" 
+        [disabled]="usuarioForm.invalid" 
+        class="p-button-primary" 
+      ></button>
+    </div>
+    <p-toast></p-toast>
+  </form>

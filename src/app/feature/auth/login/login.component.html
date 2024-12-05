@@ -1,0 +1,19 @@
+<div class="login-container" style="width: 300px; margin: 100px auto;">
+    <form (ngSubmit)="onSubmit()">
+      <div class="p-field">
+        <label for="username">Usuario</label>
+        <input id="username" type="text" pInputText [(ngModel)]="usuario" name="usuario" required />
+      </div>
+  
+      <div class="p-field">
+        <label for="password">Password</label>
+        <input id="password" type="password" pInputText [(ngModel)]="password" name="password" required />
+      </div>
+  
+      <div class="p-field">
+        <button pButton label="Iniciar sesión" icon="pi pi-sign-in" type="submit"></button>
+      </div>
+    </form>
+  
+    <p-toast></p-toast>
+  </div>

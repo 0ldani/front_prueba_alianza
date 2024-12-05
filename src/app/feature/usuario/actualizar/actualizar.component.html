@@ -1,0 +1,55 @@
+<div style="width: 400px; margin: 100px auto;">
+    <h2>Actualizar Usuario</h2>
+    
+    <form (ngSubmit)="onSubmit()" #updateForm="ngForm">
+
+      <div class="p-field">
+        <label for="id">ID</label>
+        <input
+          id="id"
+          type="text"
+          pInputText
+          [(ngModel)]="usuario.id"
+          name="id"
+          [readonly]="true"
+          required
+        />
+      </div>
+  
+      <div class="p-field">
+        <label for="nombre">Nombre</label>
+        <input
+          id="nombre"
+          type="text"
+          pInputText
+          [(ngModel)]="usuario.nombre"
+          name="nombre"
+          required
+        />
+      </div>
+  
+      <div class="p-field">
+        <label for="password">Password</label>
+        <input
+          id="password"
+          type="password"
+          pInputText
+          [(ngModel)]="usuario.password"
+          name="password"
+          required
+        />
+      </div>
+  
+      <div class="p-field">
+        <button
+          pButton
+          label="Actualizar"
+          icon="pi pi-check"
+          type="submit"
+          [disabled]="updateForm.invalid"
+        ></button>
+      </div>
+    </form>
+    
+    <p-toast></p-toast>
+  </div>

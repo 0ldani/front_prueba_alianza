@@ -1,0 +1,40 @@
+<div class="user-management">
+    <div class="header">
+      <button pButton label="Crear Usuario" icon="pi pi-plus" class="p-button-success" (click)="crearUsuario()"></button>
+    </div>
+  
+    <p-table [value]="usuarios" [responsiveLayout]="'scroll'" class="p-datatable-gridlines">
+
+      <ng-template pTemplate="header">
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Rol</th>
+          <th>Acciones</th>
+        </tr>
+      </ng-template>
+  
+      <ng-template pTemplate="body" let-usuario>
+        <tr>
+          <td>{{ usuario.id }}</td>
+          <td>{{ usuario.nombre }}</td>
+          <td>{{ usuario.roles }}</td>
+          <td>
+            <button
+              pButton
+              label="Editar"
+              class="p-button-rounded p-button-warning"
+              (click)="actualizarUsuario(usuario.id)"
+            ></button>
+            <button
+              pButton
+              label="Eliminar"
+              class="p-button-rounded p-button-danger"
+              (click)="eliminarUsuario(usuario.id)"
+            ></button>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+    <p-toast></p-toast>
+  </div>
